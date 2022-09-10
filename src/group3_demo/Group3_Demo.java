@@ -15,6 +15,8 @@ public class Group3_Demo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("My name is Rawan, I'm the leader of the group! :)");    }
+        System.out.println("My name is Rawan, I'm the leader of the group! :)");  
+        System.out.println("hi,my name's ghadah almuaiekl ");
+    }
     
 }
