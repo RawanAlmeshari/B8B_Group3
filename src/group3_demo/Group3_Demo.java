@@ -18,6 +18,7 @@ public class Group3_Demo {
         System.out.println("My name is Rawan, I'm the leader of the group! :)");  
         System.out.println("hi,my name's ghadah almuaiekl <3");
         System.out.println("Hey, I'm Bashaier Alamoudi ");
+        System.out.println("Hello  I'm shouq alzahrani ");
     }
     
 }
