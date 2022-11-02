@@ -1,0 +1,6 @@
+hairCut 70.0 jamelah
+Pedicure 100.0 ola 
+manicure 120.0 madihah 
+makeUp 500.0 wafaa 
+Wax 250.0 jana
+hairDry 150.0 jamelah
