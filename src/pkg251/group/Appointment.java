@@ -2,6 +2,8 @@
 
 package pkg251.group;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public final class Appointment {
@@ -61,13 +63,44 @@ public final class Appointment {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-
+  
+    
+    
+    public String getDateFormat(Date date) {
+       int day =date.getDay();
+        int month =  date.getMonth();
+        int year = date.getYear();
+        return day+"-"+month+"-"+year;
+    } 
+     
+     
     @Override
     public String toString() {
         return "{Appointment:" + "date=" + 
                 date + ", id: " + id +
                 ", chosenService: " + chosenService.getName() + ", customer: " + customer.getName() + '}';
     }
+    
+    
+    //format for writting appointment in appointment file 
+    public String fileFormat() {
+        return "\n"+id+" "+chosenService.name +" "+customer.getPhoneNum()+" "+getDateFormat(date) ;
+    }
+    
+    
+    //the string on the pramater will be written on appointment file 
+    public static void wirteOnFile(String whatToWrite){
+        try{
+            FileWriter fw = new FileWriter("appointment.txt",true); //the true will append the new data
+            fw.write(whatToWrite);//appends the string to the file
+            fw.close();}
+        
+        
+        catch(IOException ioe){
+           System.err.println("IOException: " + ioe.getMessage());
+         }
+    }
+
 
     
 
