@@ -17,6 +17,9 @@ public class Customer extends user{
                 customer.getPassword() + ", phoneNum=" + customer.getPhoneNum() + ", email=" + customer.getEmail() + '}';
 
     }
+    public static void addCustomer(){
+        
+    }
 
     
     
