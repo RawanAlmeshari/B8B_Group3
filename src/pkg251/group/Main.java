@@ -15,7 +15,7 @@ public class Main {
     static Scanner input = new Scanner(System.in);
     static Scanner input2 = new Scanner(System.in);
 
-    public static void main(String[] args) throws FileNotFoundException, ParseException {
+    public static void main(String[] args) throws FileNotFoundException, ParseException, IOException {
         customer = storeCustomer(new File("customers.txt"));
         worker = new ArrayList<>();
         manager = new ArrayList<>();
@@ -133,15 +133,29 @@ public class Main {
     }
 
     //cancel an appointment 
-    public static void cancelAppointmrnt() {
-        System.out.print("What is your appointment ID? ");
+    public static void cancelAppointmrnt() throws IOException {
+        
+        System.out.print("what is your phone number? ");
+        String number = input2.next();
+        int check = searchPhoneNum(number);
+        if(check !=-1){
+        String appAssign=appointmentsAssign(number);
+        System.out.println("\n\n"+appAssign);
+        if (!appAssign.equalsIgnoreCase("sorry there is no appointemnst assign to this number")){
+        System.out.print("What is teh ID of appointment you want to canceal? ");
         String id = input2.next();
         int index = searchID(id);
         if (index == -1) {
-            System.out.println("There is no appointment with " + id + " in the system");
+            System.out.println("\nThere is no appointment with id=" + id + " in the system");
         } else {
+            Appointment.removeFromFile(String.valueOf(id));
             appointment.remove(appointment.get(index));
-            System.out.println("the appointment has been deleted.");
+            System.out.println("\nthe appointment has been deleted.");
+        }
+        }
+        }
+        else{
+            System.out.println("\n\n there's not recored for this number sorry");
         }
 
     }
@@ -315,6 +329,22 @@ public class Main {
         }
         return -1;
     }
+        public static String appointmentsAssign(String phone) {
+         String app="";
+        for (int i = 0; i < appointment.size(); i++) {
+            if (!appointment.get(i).getCustomer().getPhoneNum().isEmpty()) {
+                if (appointment.get(i).getCustomer().getPhoneNum().equalsIgnoreCase(phone)) {
+                    app+=appointment.get(i).fileFormat()+"\n";
+                }
+            }
+        }
+        if(!app.isEmpty()){
+            return app; 
+        }
+        return "sorry there is no appointemnst assign to this number";
+    }
+        
+    
 
 }
 

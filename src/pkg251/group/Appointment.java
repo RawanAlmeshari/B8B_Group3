@@ -2,8 +2,10 @@
 
 package pkg251.group;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public final class Appointment {
@@ -76,8 +78,8 @@ public final class Appointment {
      
     @Override
     public String toString() {
-        return "{Appointment:" + "date=" + 
-                date + ", id: " + id +
+       return "{Appointment:" + "id: " + 
+                id + ", Date: " + date +
                 ", chosenService: " + chosenService.getName() + ", customer: " + customer.getName() + '}';
     }
     
@@ -99,6 +101,37 @@ public final class Appointment {
         catch(IOException ioe){
            System.err.println("IOException: " + ioe.getMessage());
          }
+    }
+    
+    public static void removeFromFile(String whatToDelete) throws FileNotFoundException, IOException{
+       File inputFile = new File("appointment.txt"); 
+       File tempFile = new File("myTempFile.txt"); 
+ 
+      BufferedReader reader = new BufferedReader(new FileReader(inputFile)); 
+      BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile)); 
+ 
+
+String currentLine; 
+ 
+while((currentLine = reader.readLine()) != null) { 
+ 
+// trim newline when comparing with lineToRemove 
+//String lineToRemove = whatToDelete; 
+    String trimmedLine = currentLine.trim(); 
+    
+    if(trimmedLine.startsWith(whatToDelete)) continue; 
+ 
+    writer.write(currentLine + System.getProperty("line.separator")); 
+} 
+      writer.close();  
+      reader.close();  
+ 
+    FileChannel src = new FileInputStream(tempFile).getChannel();
+    FileChannel dest = new FileOutputStream(inputFile).getChannel();
+    dest.transferFrom(src, 0, src.size());
+    src.close();
+    dest.close();
+    tempFile.deleteOnExit();
     }
 
 
