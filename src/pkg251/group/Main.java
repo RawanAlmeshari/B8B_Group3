@@ -39,7 +39,7 @@ public class Main {
                 
             } else if (choice == 4) {
                 generateReport();
-                System.exit(0);
+                
             } else if (choice == 5) {
                 int show = 0;
                 do {
@@ -349,7 +349,7 @@ public class Main {
         System.out.println("\tWeekly Report For Louts Salon\n"
                 + "============================================");
         System.out.println("\nManager Of the Salon: " + manager.get(0).getName() + "\n");
-        System.out.println("Total Appointment: " + appointment.size());
+        System.out.println("Total Appointment: " + appointment.size()+"\n");
         dashes();
         System.out.println("    Service\t\t Price\t\t Worker");
         dashes();
@@ -365,10 +365,11 @@ public class Main {
         Report report = new Report();
         System.out.println("");
         dashes();
-        System.out.println("\tService\t\t Reservation\t\t Price\t\t");
+        System.out.println("    Service\t    Reservation\t\t Total\t");
         dashes();
         for (int i = 0; i < service.size(); i++) {
-            System.out.println(service.get(i).getName() + "\t\t"+ report.calculateServices(appointment, service.get(i).getName())+"\t\t"+report.calculatePrice(appointment, i, service)+"SAR");
+            System.out.printf("%d.  %-20s %d\t\t %.2f\n", (i+1),service.get(i).getName(), 
+                    report.calculateServices(appointment, service.get(i).getName()),report.calculatePrice(appointment, i, service));
         }
         System.out.println("");
         dashes();
