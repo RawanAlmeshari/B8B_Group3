@@ -355,7 +355,10 @@ public class Main {
         dashes();
         for (int i = 0; i < service.size(); i++) {
             if (!service.get(i).getName().isEmpty()) {
-                System.out.println((i + 1) + ".  " + service.get(i).getName() + "\t\t" + service.get(i).getPrice() + "SAR\t\t" + service.get(i).getDoneBy().getName());
+              
+                System.out.printf("%d.  %-20s %.2f\t\t %-15s\n", (i+1),service.get(i).getName(),
+                        service.get(i).getPrice(),service.get(i).getDoneBy().getName());
+                
             }
         }
         dashes();
