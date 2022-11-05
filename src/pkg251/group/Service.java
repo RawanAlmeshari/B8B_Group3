@@ -7,6 +7,9 @@ public class Service {
     double price;
     Worker doneBy;
 
+    public Service() {
+       
+    }
     public Service(String name, double price, Worker doneBy) {
         this.name = name;
         this.price = price;

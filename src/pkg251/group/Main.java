@@ -100,13 +100,14 @@ public class Main {
     }
 
     // book an appointment
-    public static void Book() throws ParseException {
+    public static boolean Book() throws ParseException {
         Scanner input3 = new Scanner(System.in);
         System.out.print("enter your phone number: ");
         String phoneNum = input3.next();
         int doesExist = searchPhoneNum(phoneNum);
         if (doesExist == -1) {
             System.out.println("\nthere's no customer assigned to this number\n\n");
+            return false;
         } else {
             servicesMenu();
             int serviceID = input3.nextInt();
@@ -129,6 +130,7 @@ public class Main {
             thisAppointment.wirteOnFile(thisAppointment.fileFormat());
             appointmentsID++;
             System.out.println("\n THANK YOU ");
+            return true;
         }
     }
 
