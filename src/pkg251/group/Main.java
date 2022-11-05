@@ -36,7 +36,7 @@ public class Main {
             } else if (choice == 2) {
                 cancelAppointmrnt();
             } else if (choice == 3) {
-                
+                printWorkSchedule();
             } else if (choice == 4) {
                 generateReport();
                 
@@ -379,5 +379,55 @@ public class Main {
     
     public static void dashes() {
         System.out.println("--------------------------------------------------------");
+    }
+    public static void printWorkSchedule()
+   {System.out.print("Enter yout phone : ");
+   String phone= input2.next();
+   int index2 = searchWorkerPhoneNum(phone);
+   if (index2 == -1) {
+       System.out.println("There is no " + phone + " stored here");
+   }
+   else
+   {
+       int count = 0;
+       System.out.println("===========================================================");
+       System.out.println("------------------" + worker.get(index2).getName() + "'s WORK SCHEDULE:----"
+               + "-------------");
+       System.out.println("===========================================================\n\n");
+       System.out.printf("   %-15s %-15s %-20s %-15s\n", "SERVICE", "DATE", "CUSTOMER PHONE", "CUSTOMER NAME");
+       System.out.println("----------------------------------------------------------------------");
+       for (int i = 0; i < appointment.size(); i++) {
+           if (!appointment.get(i).getId().isEmpty()) {
+               if (appointment.get(i).getChosenService().getDoneBy().getPhoneNum().equalsIgnoreCase(phone)) {
+                   String datee = appointment.get(i).getDate().getDay() + "-" + appointment.get(i).getDate().getMonth() + "-" + appointment.get(i).getDate().getYear();
+                        System.out.printf("%d. %-15s %-15s %-20s %-15s \n", (count + 1), appointment.get(i).getChosenService().getName(),
+                                datee, appointment.get(i).getCustomer().getPhoneNum(),
+                                appointment.get(i).getCustomer().getName());
+                        count++;
+                    }
+
+                }
+
+            }
+
+            if (count == 0) {
+                System.out.println("Your Schedule is empty :)");
+            }
+
+            System.out.println("----------------------------------------------------------------------");
+
+        }
+    }
+
+   public static int searchWorkerPhoneNum(String phone) {
+        
+        for (int i = 0; i < worker.size(); i++) {
+            if (!worker.get(i).getPhoneNum().isEmpty()) {
+                if (worker.get(i).getPhoneNum().equalsIgnoreCase(phone)) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 }

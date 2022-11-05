@@ -7,7 +7,7 @@ public class Report extends Manager {
     ArrayList<Appointment> appointment;
     ArrayList<Service> service;
 
-    public void generateReport(WorkSchedule schedule, Appointment appointment) {
+    public void generateReport(Appointment appointment) {
 
     }
 
