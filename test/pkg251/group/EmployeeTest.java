@@ -79,13 +79,13 @@ public class EmployeeTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Employee employee = null;
-        Employee instance = new Employee();
+        Employee employee = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
+        Employee instance = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
         String expResult = "";
         String result = instance.toString(employee);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
 }
