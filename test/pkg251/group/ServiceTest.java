@@ -110,12 +110,12 @@ public class ServiceTest {
      */
     @Test
     public void testSetDoneBy() {
-        System.out.println("setDoneBy");
-        Worker doneBy = null;
-        Service instance = new Service();
-        instance.setDoneBy(doneBy);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  System.out.println("setDoneBy");
+      // (String userName, String name, int password, String phoneNum, String email,double salary)
+        Worker doneBy = new Worker ("Bashaieriee","BASHAIER",7364,"0536473736","nfke@fkeok.com",3664.0);
+        String result = doneBy.getName();
+        String expected = "BASHAIER";
+        assertEquals(result,expected);
     }
 
     /**
