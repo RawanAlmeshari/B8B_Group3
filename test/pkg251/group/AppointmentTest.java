@@ -44,13 +44,13 @@ public class AppointmentTest {
     @Test
     public void testConverToDate() {
         System.out.println("converToDate");
-        String date = "12-12-2022";
+        String date = "";
         Appointment instance = new Appointment();
-        Date expResult = new Date(2022,12, 12);;
+        Date expResult = null;
         Date result = instance.converToDate(date);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -73,12 +73,12 @@ public class AppointmentTest {
     @Test
     public void testGetId() {
         System.out.println("getId");
-        Appointment instance = new Appointment("11",new Service(),new Customer(),"12-12-2022");
-        String expResult = "11";
+        Appointment instance = new Appointment();
+        String expResult = "";
         String result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -87,7 +87,7 @@ public class AppointmentTest {
     @Test
     public void testGetChosenService() {
         System.out.println("getChosenService");
-        Appointment instance = new Appointment("11",new Service(),new Customer(),"12-12-2022");
+        Appointment instance = new Appointment();
         Service expResult = null;
         Service result = instance.getChosenService();
         assertEquals(expResult, result);

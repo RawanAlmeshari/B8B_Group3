@@ -43,7 +43,7 @@ public class ServiceTest {
     @Test
     public void testGetName() {
         System.out.println("getName");
-        Service instance = null;
+        Service instance = new Service();
         String expResult = "";
         String result = instance.getName();
         assertEquals(expResult, result);
@@ -57,7 +57,7 @@ public class ServiceTest {
     @Test
     public void testGetPrice() {
         System.out.println("getPrice");
-        Service instance = null;
+        Service instance = new Service();
         double expResult = 0.0;
         double result = instance.getPrice();
         assertEquals(expResult, result, 0.0);
@@ -71,7 +71,7 @@ public class ServiceTest {
     @Test
     public void testGetDoneBy() {
         System.out.println("getDoneBy");
-        Service instance = null;
+        Service instance = new Service();
         Worker expResult = null;
         Worker result = instance.getDoneBy();
         assertEquals(expResult, result);
@@ -86,7 +86,7 @@ public class ServiceTest {
     public void testSetName() {
         System.out.println("setName");
         String name = "";
-        Service instance = null;
+        Service instance = new Service();
         instance.setName(name);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -99,7 +99,7 @@ public class ServiceTest {
     public void testSetPrice() {
         System.out.println("setPrice");
         double price = 0.0;
-        Service instance = null;
+        Service instance = new Service();
         instance.setPrice(price);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -112,7 +112,7 @@ public class ServiceTest {
     public void testSetDoneBy() {
         System.out.println("setDoneBy");
         Worker doneBy = null;
-        Service instance = null;
+        Service instance = new Service();
         instance.setDoneBy(doneBy);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -125,7 +125,7 @@ public class ServiceTest {
     public void testToString() {
         System.out.println("toString");
         Service service = null;
-        Service instance = null;
+        Service instance = new Service();
         String expResult = "";
         String result = instance.toString(service);
         assertEquals(expResult, result);

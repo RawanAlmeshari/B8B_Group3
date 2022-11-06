@@ -57,9 +57,9 @@ public class MainTest {
     @Test
     public void testBook() throws Exception {
         System.out.println("Book");
-        //Main.Book();
+        Main.Book();
         // TODO review the generated test code and remove the default call to fail.
-       fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -162,12 +162,12 @@ public class MainTest {
     @Test
     public void testSearchWorker() {
         System.out.println("searchWorker");
-        String name = "jana";
+        String name = "";
         int expResult = 0;
         int result = Main.searchWorker(name);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-      //  fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -176,12 +176,12 @@ public class MainTest {
     @Test
     public void testSearchPhoneNum() {
         System.out.println("searchPhoneNum");
-        String phone = "0583928376";
-        int expResult = 2;
+        String phone = "";
+        int expResult = 0;
         int result = Main.searchPhoneNum(phone);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -190,12 +190,12 @@ public class MainTest {
     @Test
     public void testSearchService() {
         System.out.println("searchService");
-        String name = "hairCut";
+        String name = "";
         int expResult = 0;
         int result = Main.searchService(name);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       
+        fail("The test case is a prototype.");
     }
 
     /**
@@ -265,13 +265,12 @@ public class MainTest {
     @Test
     public void testSearchWorkerPhoneNum() {
         System.out.println("searchWorkerPhoneNum");
-        String phone = "0583728476";
+        String phone = "";
         int expResult = 0;
         int result = Main.searchWorkerPhoneNum(phone);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
-        
+        fail("The test case is a prototype.");
     }
     
 }
