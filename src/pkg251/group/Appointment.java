@@ -133,7 +133,9 @@ while((currentLine = reader.readLine()) != null) {
     dest.close();
     tempFile.deleteOnExit();
     }
-
+ public static boolean isNull(Appointment s){
+   return  s.equals(null);
+ }
 
     
 

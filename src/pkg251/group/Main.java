@@ -32,7 +32,14 @@ public class Main {
             choice = input2.nextInt();
             
             if (choice == 1) {
-                Book();
+              System.out.print("enter your phone number: ");
+              String phoneNum = input2.next();
+              servicesMenu();
+              int serviceID = input2.nextInt();
+            System.out.print("Enter the date of service as day-month-year: ");
+            String date = input2.next();
+            
+                Book(addAppointment(phoneNum,serviceID,date));
             } else if (choice == 2) {
                 cancelAppointmrnt();
             } else if (choice == 3) {
@@ -100,38 +107,17 @@ public class Main {
     }
 
     // book an appointment
-    public static boolean Book() throws ParseException {
-        Scanner input3 = new Scanner(System.in);
-        System.out.print("enter your phone number: ");
-        String phoneNum = input3.next();
-        int doesExist = searchPhoneNum(phoneNum);
-        if (doesExist == -1) {
-            System.out.println("\nthere's no customer assigned to this number\n\n");
-            return false;
-        } else {
-            servicesMenu();
-            int serviceID = input3.nextInt();
-            while (serviceID == -1) {
-                System.out.println("choose number from the menu pleas :)");
-                
-                servicesMenu();
-                serviceID = input3.nextInt();
-            }
-            Service choosenservise = service.get(serviceID - 1);
-            System.out.print("Enter the date of service as day-month-year: ");
-            String date = input3.next();
-            while (!date.matches("(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-((202)[1-9])")) {
-                System.out.print("try again and follow the format: ");
-                date = input3.next();
-            }
-            Appointment thisAppointment = new Appointment(Integer.toString(appointmentsID), choosenservise, customer.get(doesExist), date);
-            
-            appointment.add(thisAppointment);
+    public static boolean Book(Appointment thisAppointment) throws ParseException {
+           if(!thisAppointment.i)
+              return false;
+          else{
+             appointment.add(thisAppointment);
             thisAppointment.wirteOnFile(thisAppointment.fileFormat());
             appointmentsID++;
             System.out.println("\n THANK YOU ");
-            return true;
-        }
+            return true;  
+          }
+           
     }
 
     //cancel an appointment 
@@ -432,4 +418,27 @@ public class Main {
         }
         return -1;
     }
+   public static Appointment addAppointment(String phoneNum,int serviceID,String date ){
+        Scanner input3 = new Scanner(System.in);
+        int doesExist = searchPhoneNum(phoneNum);
+        if (doesExist == -1) {
+            System.out.println("\nthere's no customer assigned to this number\n\n");
+            return null;
+        } 
+        if(!date.matches("(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-((202)[1-9])")) {
+               return null;
+            } if(serviceID == -1) {
+               return null;
+            } else {
+            
+           
+            Service choosenservise = service.get(serviceID - 1);
+           
+           
+            Appointment thisAppointment = new Appointment(Integer.toString(appointmentsID), choosenservise, customer.get(doesExist), date);
+            
+            
+            return thisAppointment;
+        }
+   }
 }
