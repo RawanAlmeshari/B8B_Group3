@@ -31,6 +31,7 @@ public final class Appointment {
         convert.setDate(Integer.parseInt(str[0]));
         convert.setMonth(Integer.parseInt(str[1]));
         convert.setYear(Integer.parseInt(str[2]));
+        System.out.println("hi ghada");
         return convert;
     }
 
