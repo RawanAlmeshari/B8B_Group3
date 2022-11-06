@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pkg251.group;
 
 import org.junit.After;
@@ -42,13 +38,12 @@ public class ServiceTest {
      */
     @Test
     public void testGetName() {
-        System.out.println("getName");
-        Service instance = new Service();
-        String expResult = "";
-        String result = instance.getName();
+        Service service = new Service("HairCut",150.0,null);
+        String result  = service.getName();
+        String expResult = "HairCut";
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -56,13 +51,12 @@ public class ServiceTest {
      */
     @Test
     public void testGetPrice() {
-        System.out.println("getPrice");
-        Service instance = new Service();
-        double expResult = 0.0;
-        double result = instance.getPrice();
+        Service service = new Service("HairCut",150.0,null);
+        double result = service.getPrice();
+        double expResult = 150.0;
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -70,13 +64,15 @@ public class ServiceTest {
      */
     @Test
     public void testGetDoneBy() {
-        System.out.println("getDoneBy");
-        Service instance = new Service();
-        Worker expResult = null;
-        Worker result = instance.getDoneBy();
+        Worker doneBy = new Worker("Bashaieriee", "BASHAIER", 7364, "0536473736", "nfke@fkeok.com", 3664.0);
+
+        Service service = new Service("HairCut", 150.0, doneBy);
+
+        String expResult = "BASHAIER";
+        String result = service.getDoneBy().getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
 
     /**
@@ -84,12 +80,14 @@ public class ServiceTest {
      */
     @Test
     public void testSetName() {
-        System.out.println("setName");
-        String name = "";
-        Service instance = new Service();
-        instance.setName(name);
+        //System.out.println("setName");
+        Service service = new Service();
+        service.setName("HairCut");
+        String name = "HairCut";
+        String result = service.getName();
+        assertEquals(name, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //  fail("The test case is a prototype.");
     }
 
     /**
@@ -97,12 +95,12 @@ public class ServiceTest {
      */
     @Test
     public void testSetPrice() {
-        System.out.println("setPrice");
-        double price = 0.0;
-        Service instance = new Service();
-        instance.setPrice(price);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //(String name, double price, Worker doneBy)
+        Service service = new Service() ;
+        service.setPrice(150.0);
+        double expected = 150.0;
+        double result = service.getPrice();
+        assertEquals(expected, result,0);
     }
 
     /**
@@ -121,16 +119,18 @@ public class ServiceTest {
     /**
      * Test of toString method, of class Service.
      */
+    
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Service service = null;
-        Service instance = new Service();
-        String expResult = "";
-        String result = instance.toString(service);
+        Worker doneBy = new Worker("Bashaieriee", "BASHAIER", 7364, "0536473736", "nfke@fkeok.com", 3664.0);
+        Service service = new Service("HairCut", 150.0, doneBy);
+        
+        String expResult = "Service{name=" + service.getName() + ", price=" + 
+                service.getPrice() + ", doneBy=" + service.getDoneBy().getName() +"}";
+        
+        String result = "Service{name=HairCut, price=150.0, doneBy=BASHAIER}";
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
     
 }
