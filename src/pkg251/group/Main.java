@@ -258,7 +258,7 @@ public class Main {
     }
 
     //store appointments on file to array list
-    public static void storeAppointment(File file) throws FileNotFoundException {
+    public static void storeAppointment(File file) throws FileNotFoundException, ParseException {
         input = new Scanner(file);
         String id = "";
         if (file.exists()) {

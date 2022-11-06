@@ -29,9 +29,8 @@ public final class Appointment {
         String []str = date.split("-");
         Date convert=new Date();
         convert.setDate(Integer.parseInt(str[0]));
-        convert.setMonth(Integer.parseInt(str[1]));
+        convert.setMonth(Integer.parseInt(str[1])-1);
         convert.setYear(Integer.parseInt(str[2]));
-        System.out.println("hi ghada");
         return convert;
     }
 
@@ -70,8 +69,8 @@ public final class Appointment {
     
     
     public String getDateFormat(Date date) {
-       int day =date.getDay();
-        int month =  date.getMonth();
+        int day =date.getDate();
+        int month =  date.getMonth()+1;
         int year = date.getYear();
         return day+"-"+month+"-"+year;
     } 
