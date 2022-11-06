@@ -124,12 +124,10 @@ public class ServiceTest {
     public void testToString() {
         Worker doneBy = new Worker("Bashaieriee", "BASHAIER", 7364, "0536473736", "nfke@fkeok.com", 3664.0);
         Service service = new Service("HairCut", 150.0, doneBy);
-        
-        String expResult = "Service{name=" + service.getName() + ", price=" + 
-                service.getPrice() + ", doneBy=" + service.getDoneBy().getName() +"}";
+        String exp = service.toString(service);
         
         String result = "Service{name=HairCut, price=150.0, doneBy=BASHAIER}";
-        assertEquals(expResult, result);
+        assertEquals(exp, result);
       
     }
     

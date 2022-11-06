@@ -14,7 +14,7 @@ public class Manager extends Employee{
     public String toString(Manager employee) {
         return "Employee{" + "userName=" + employee.getUserName() + ", name=" + employee.getName()
                 + ", password=" + employee.getPassword() + ", phoneNum=" + employee.getPhoneNum()
-                + ", email=" + employee.getEmail() +  "salary=" + employee.getSalary() + '}';
+                + ", email=" + employee.getEmail() +  " salary=" + employee.getSalary() + '}';
     }
     
     

@@ -42,14 +42,14 @@ public class ManagerTest {
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Manager employee = null;
-        Manager instance = new Manager();
-        String expResult = "";
-        String result = instance.toString(employee);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Manager employee = new Manager ( "bashaieriee",  "BASHAIER",6374,"0563748372","EFH@HOTMAIL.COM",6534.3);
+        String result = employee.toString(employee);
+        
+        String expected = "Employee{userName=bashaieriee, name=BASHAIER, password=6374"
+                + ", phoneNum=0563748372, email=EFH@HOTMAIL.COM salary=6534.3}";
+        
+        assertEquals(expected, result);
+        
     }
     
 }
