@@ -40,15 +40,21 @@ public class EmployeeTest {
     /**
      * Test of getSalary method, of class Employee.
      */
+    
+
+
+    public void testSetSalary(double salary) {
+     
+    }
     @Test
     public void testGetSalary() {
         System.out.println("getSalary");
-        Employee instance = new Employee();
-        double expResult = 0.0;
+        Employee instance = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
+        double expResult = 200000;
         double result = instance.getSalary();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 0.5);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
 
     /**
@@ -57,11 +63,14 @@ public class EmployeeTest {
     @Test
     public void testSetSalary() {
         System.out.println("setSalary");
-        double salary = 0.0;
-        Employee instance = new Employee();
+        double salary = 2500000;
+        double expResult =2500000 ;
+        Employee instance = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
         instance.setSalary(salary);
+        double result = instance.getSalary();
+        assertEquals(expResult, result, 0.5);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
 
     /**
