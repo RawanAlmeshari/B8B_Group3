@@ -59,12 +59,14 @@ public class AppointmentTest {
     @Test
     public void testGetDate() {
         System.out.println("getDate");
-        Appointment instance = new Appointment();
+        Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
         Date expResult = null;
         Date result = instance.getDate();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -73,12 +75,14 @@ public class AppointmentTest {
     @Test
     public void testGetId() {
         System.out.println("getId");
-        Appointment instance = new Appointment();
-        String expResult = "";
+        Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
+        String expResult = "15";
         String result = instance.getId();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -87,12 +91,14 @@ public class AppointmentTest {
     @Test
     public void testGetChosenService() {
         System.out.println("getChosenService");
-        Appointment instance = new Appointment();
-        Service expResult = null;
+         Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
+        Service expResult =service;
         Service result = instance.getChosenService();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -101,12 +107,15 @@ public class AppointmentTest {
     @Test
     public void testGetCustomer() {
         System.out.println("getCustomer");
-        Appointment instance = new Appointment();
-        Customer expResult = null;
+        Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
+        Customer expResult = customer;
         Customer result = instance.getCustomer();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -128,11 +137,16 @@ public class AppointmentTest {
     @Test
     public void testSetId() {
         System.out.println("setId");
-        String id = "";
-        Appointment instance = new Appointment();
+        String id = "12";
+         Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
         instance.setId(id);
+        String result ="12";
+        String expResult = instance.getId();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -141,11 +155,16 @@ public class AppointmentTest {
     @Test
     public void testSetChosenService() {
         System.out.println("setChosenService");
-        Service chosenService = null;
-        Appointment instance = new Appointment();
+        Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
+        Service chosenService = new Service("wax",100,worker);
         instance.setChosenService(chosenService);
+        Service result = chosenService;
+        Service expResult = instance.getChosenService();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -154,11 +173,15 @@ public class AppointmentTest {
     @Test
     public void testSetCustomer() {
         System.out.println("setCustomer");
-        Customer customer = null;
-        Appointment instance = new Appointment();
-        instance.setCustomer(customer);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+         Worker worker= new Worker("gadoo","ghadah", 1234, "0593480888", "ghadahSultan75@gmail",30000);
+        Service service = new Service("wax",12.5,worker);
+        Customer customer = new Customer("roro","rawan", 2345, "0523232312","rawan75@gmail");
+        Appointment instance = new Appointment("15",service ,customer,"12-12-2022");
+        Customer customer1 = new Customer("lolo","layan", 1212, "0523232312","lolo75@gmail");
+        instance.setCustomer(customer1);
+        Customer result =customer1 ;
+        Customer expResult = instance.getCustomer();
+        assertEquals(expResult, result);
     }
 
     /**
@@ -173,7 +196,6 @@ public class AppointmentTest {
         String result = instance.getDateFormat(date);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
