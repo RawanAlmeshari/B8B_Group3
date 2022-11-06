@@ -119,7 +119,7 @@ public class Main {
             Service choosenservise = service.get(serviceID - 1);
             System.out.print("Enter the date of service as day-month-year: ");
             String date = input3.next();
-            while (!date.matches("(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[012])-((202)[1-9])")) {
+            while (!date.matches("(0[1-9]|[1][0-9]|3[0-1])-(0[1-9]|1[01-2])-((202)[1-9])")) {
                 System.out.print("try again and follow the format: ");
                 date = input3.next();
             }
