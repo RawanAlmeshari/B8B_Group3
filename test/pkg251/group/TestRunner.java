@@ -20,14 +20,19 @@ public class TestRunner {
 
        System.out.println("------------Test Summary-------------");
        System.out.println("Total number of Test methods: "+result.getRunCount());
+       int success = (result.getRunCount())-(result.getIgnoreCount()+result.getFailureCount());
+       System.out.println("Total number of successed Tests methods: " +success);
        System.out.println("Total number of Ignored Tests: "+ result.getIgnoreCount());
        System.out.println("Total number of Failed Tests Methods: "+ result.getFailureCount());
+       
        System.out.println("-------------------------------------");
-       System.out.println("Failure details:");
+       
      //  System.out.println(result.getFailures().toString());
+     if (result.getFailureCount()>0){
+         System.out.println("Failure details:");
      for (Failure failure : result.getFailures()) {
          System.out.println(failure.toString());
-      }		
+      }		}
      // System.out.println(result.wasSuccessful());*/
    }
 }  

@@ -42,7 +42,6 @@ public class userTest {
      */
     @Test
     public void testSetUserName() {
-        //System.out.println("setUserName");
         String userName = "gado";
         String expResult ="gado" ;
 
@@ -59,7 +58,6 @@ public class userTest {
      */
     @Test
     public void testSetName() {
-      //  System.out.println("setName");
         String name= "gado";
         String expResult ="gado" ;
         user instance = new user("ghadah","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
@@ -74,7 +72,6 @@ public class userTest {
      */
     @Test
     public void testSetPassword() {
-      //  System.out.println("setPassword");
         int password = 2222;
         int expResult = 2222;
         user instance = new user("ghadah","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
@@ -91,7 +88,6 @@ public class userTest {
      */
     @Test
     public void testSetPhoneNum() {
-       // System.out.println("setPhoneNum");
         String phoneNum = "0591111111";
         String expResult = "0591111111";
         user instance = new user("ghadah","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
@@ -107,7 +103,6 @@ public class userTest {
      */
     @Test
     public void testSetEmail() {
-        //System.out.println("setEmail");
         String email = "ghadah@gmail.com";
         String  expResult= "ghadah@gmail.com";
         user instance = new user("ghadah","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
@@ -123,7 +118,6 @@ public class userTest {
      */
     @Test
     public void testGetUserName() {
-       // System.out.println("getUserName");
         user instance = new user("gadoo","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
         String expResult = "gadoo";
         String result = instance.getUserName();
@@ -136,7 +130,6 @@ public class userTest {
      */
     @Test
     public void testGetName() {
-       // System.out.println("getName");
         user instance = new user("gadoo","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
         String expResult = "ghadah";
         String result = instance.getName();
@@ -149,7 +142,6 @@ public class userTest {
      */
     @Test
     public void testGetPassword() {
-       // System.out.println("getPassword");
         user instance = new user("gadoo","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
         int expResult = 1234;
         int result = instance.getPassword();
@@ -162,7 +154,6 @@ public class userTest {
      */
     @Test
     public void testGetPhoneNum() {
-       // System.out.println("getPhoneNum");
         user instance = new user("gadoo","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
         String expResult = "0593480888";
         String result = instance.getPhoneNum();
@@ -175,7 +166,6 @@ public class userTest {
      */
     @Test
     public void testGetEmail() {
-       // System.out.println("getEmail");
         user instance = new user("gadoo","ghadah",1234,"0593480888","gadahAlmuaikel@gmail.com");
         String expResult = "gadahAlmuaikel@gmail.com";
         String result = instance.getEmail();
