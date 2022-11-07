@@ -13,6 +13,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
+
 
 /**
  *
@@ -43,6 +45,7 @@ public class MainTest {
      * Test of main method, of class Main.
      */
     @Test
+    @Ignore
     public void testMain() throws Exception {
         System.out.println("main");
         String[] args = null;
@@ -55,6 +58,8 @@ public class MainTest {
      * Test of Book method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testBook() throws Exception {
         System.out.println("Book");
         Main.Book();
@@ -66,6 +71,8 @@ public class MainTest {
      * Test of cancelAppointmrnt method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testCancelAppointmrnt() throws Exception {
         System.out.println("cancelAppointmrnt");
         Main.cancelAppointmrnt();
@@ -77,6 +84,7 @@ public class MainTest {
      * Test of showOptions method, of class Main.
      */
     @Test
+    @Ignore
     public void testShowOptions() {
         System.out.println("showOptions");
         Main.showOptions();
@@ -88,6 +96,7 @@ public class MainTest {
      * Test of servicesMenu method, of class Main.
      */
     @Test
+    @Ignore
     public void testServicesMenu() {
         System.out.println("servicesMenu");
         Main.servicesMenu();
@@ -99,6 +108,7 @@ public class MainTest {
      * Test of menu method, of class Main.
      */
     @Test
+    @Ignore
     public void testMenu() {
         System.out.println("menu");
         Main.menu();
@@ -110,6 +120,8 @@ public class MainTest {
      * Test of storeEmployee method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testStoreEmployee() throws Exception {
         System.out.println("storeEmployee");
         File file = null;
@@ -122,6 +134,8 @@ public class MainTest {
      * Test of storeServices method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testStoreServices() throws Exception {
         System.out.println("storeServices");
         File file = null;
@@ -134,6 +148,8 @@ public class MainTest {
      * Test of storeCustomer method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testStoreCustomer() throws Exception {
         System.out.println("storeCustomer");
         File file = null;
@@ -148,6 +164,8 @@ public class MainTest {
      * Test of storeAppointment method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testStoreAppointment() throws Exception {
         System.out.println("storeAppointment");
         File file = null;
@@ -160,6 +178,8 @@ public class MainTest {
      * Test of searchWorker method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testSearchWorker() {
         System.out.println("searchWorker");
         String name = "";
@@ -174,6 +194,7 @@ public class MainTest {
      * Test of searchPhoneNum method, of class Main.
      */
     @Test
+        @Ignore
     public void testSearchPhoneNum() {
         System.out.println("searchPhoneNum");
         String phone = "";
@@ -188,6 +209,7 @@ public class MainTest {
      * Test of searchService method, of class Main.
      */
     @Test
+        @Ignore
     public void testSearchService() {
         System.out.println("searchService");
         String name = "";
@@ -202,6 +224,7 @@ public class MainTest {
      * Test of searchID method, of class Main.
      */
     @Test
+        @Ignore
     public void testSearchID() {
         System.out.println("searchID");
         String id = "";
@@ -216,6 +239,7 @@ public class MainTest {
      * Test of appointmentsAssign method, of class Main.
      */
     @Test
+        @Ignore
     public void testAppointmentsAssign() {
         System.out.println("appointmentsAssign");
         String phone = "";
@@ -230,6 +254,7 @@ public class MainTest {
      * Test of generateReport method, of class Main.
      */
     @Test
+        @Ignore
     public void testGenerateReport() {
         System.out.println("generateReport");
         Main.generateReport();
@@ -241,9 +266,12 @@ public class MainTest {
      * Test of dashes method, of class Main.
      */
     @Test
+        @Ignore
     public void testDashes() {
-        System.out.println("dashes");
-        Main.dashes();
+        //System.out.println("dashes");
+        
+        String dash= "--------------------------------------------------------";
+        //assertEquals(Main.dashes(),dash);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -252,8 +280,10 @@ public class MainTest {
      * Test of printWorkSchedule method, of class Main.
      */
     @Test
+        @Ignore
+
     public void testPrintWorkSchedule() {
-        System.out.println("printWorkSchedule");
+       // System.out.println("printWorkSchedule");
         Main.printWorkSchedule();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -264,13 +294,15 @@ public class MainTest {
      */
     @Test
     public void testSearchWorkerPhoneNum() {
-        System.out.println("searchWorkerPhoneNum");
-        String phone = "";
+        //System.out.println("searchWorkerPhoneNum");
+        Worker worker = new Worker ("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
+       ArrayList <Worker> work = new ArrayList <>();
+       work.add(worker);
         int expResult = 0;
-        int result = Main.searchWorkerPhoneNum(phone);
+        int result = Main.searchWorkerPhoneNum("0593480888",work);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

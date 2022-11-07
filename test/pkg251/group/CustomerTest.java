@@ -42,25 +42,15 @@ public class CustomerTest {
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
-        Customer customer = null;
-        Customer instance = new Customer();
-        String expResult = "";
-        String result = instance.toString(customer);
+        Customer customer = new Customer("bashaieriee",  "BASHAIER",6374,"0563748372","EFH@HOTMAIL.COM");
+        String expResult = "Customer{userName=bashaieriee, name=BASHAIER, password=6374, phoneNum=0563748372, email=EFH@HOTMAIL.COM}";
+
+        String result = customer.toString(customer);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
-    /**
-     * Test of addCustomer method, of class Customer.
-     */
-    @Test
-    public void testAddCustomer() {
-        System.out.println("addCustomer");
-        Customer.addCustomer();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+  
+   
 }

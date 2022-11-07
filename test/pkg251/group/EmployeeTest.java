@@ -48,7 +48,7 @@ public class EmployeeTest {
     }
     @Test
     public void testGetSalary() {
-        System.out.println("getSalary");
+        //System.out.println("getSalary");
         Employee instance = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
         double expResult = 200000;
         double result = instance.getSalary();
@@ -62,7 +62,7 @@ public class EmployeeTest {
      */
     @Test
     public void testSetSalary() {
-        System.out.println("setSalary");
+      //  System.out.println("setSalary");
         double salary = 2500000;
         double expResult =2500000 ;
         Employee instance = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
@@ -78,11 +78,12 @@ public class EmployeeTest {
      */
     @Test
     public void testToString() {
-        System.out.println("toString");
+        //System.out.println("toString");
         Employee employee = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
-        Employee instance = new Employee("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
-        String expResult = "";
-        String result = instance.toString(employee);
+        String expResult = "Employee{userName=gadah, name=ghadah, password=1234,"
+                + " phoneNum=0593480888, email=ghadahsultan75@gmail.com, salary=200000.0}";
+        String result = employee.toString(employee);
+        
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        

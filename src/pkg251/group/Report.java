@@ -7,15 +7,6 @@ public class Report extends Manager {
     ArrayList<Appointment> appointment;
     ArrayList<Service> service;
 
-    public void generateReport(Appointment appointment) {
-
-    }
-
-    public void Report(ArrayList<Appointment> appointment) {
-        this.appointment = appointment;
-
-    }
-
     public int calculateIncome(ArrayList<Appointment> appointment) {
         int sum = 0;
         for (int i = 0; i < appointment.size(); i++) {

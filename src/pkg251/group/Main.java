@@ -385,7 +385,7 @@ public class Main {
     public static void printWorkSchedule()
    {System.out.print("Enter yout phone : ");
    String phone= input2.next();
-   int index2 = searchWorkerPhoneNum(phone);
+   int index2 = searchWorkerPhoneNum(phone,worker );
    if (index2 == -1) {
        System.out.println("There is no " + phone + " stored here");
    }
@@ -401,7 +401,7 @@ public class Main {
        for (int i = 0; i < appointment.size(); i++) {
            if (!appointment.get(i).getId().isEmpty()) {
                if (appointment.get(i).getChosenService().getDoneBy().getPhoneNum().equalsIgnoreCase(phone)) {
-                   String datee = appointment.get(i).getDate().getDay() + "-" + appointment.get(i).getDate().getMonth() + "-" + appointment.get(i).getDate().getYear();
+                   String datee = appointment.get(i).getDateFormat(appointment.get(i).getDate());
                         System.out.printf("%d. %-15s %-15s %-20s %-15s \n", (count + 1), appointment.get(i).getChosenService().getName(),
                                 datee, appointment.get(i).getCustomer().getPhoneNum(),
                                 appointment.get(i).getCustomer().getName());
@@ -421,7 +421,7 @@ public class Main {
         }
     }
 
-   public static int searchWorkerPhoneNum(String phone) {
+   public static int searchWorkerPhoneNum(String phone, ArrayList<Worker> worker ) {
         
         for (int i = 0; i < worker.size(); i++) {
             if (!worker.get(i).getPhoneNum().isEmpty()) {

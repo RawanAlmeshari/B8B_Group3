@@ -79,7 +79,7 @@ public final class Appointment {
     @Override
     public String toString() {
        return "{Appointment:" + "id: " + 
-                id + ", Date: " + date +
+                id + ", Date: " + getDateFormat(date) +
                 ", chosenService: " + chosenService.getName() + ", customer: " + customer.getName() + '}';
     }
     

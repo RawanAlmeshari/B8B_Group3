@@ -32,9 +32,9 @@ public class Employee extends user {
 
    // @Override
     public String toString(Employee employee) {
-        return "Employee{" + "userName=" + employee.getUserName() + ", name=" + employee.getName()
+        return "Employee{userName=" + employee.getUserName() + ", name=" + employee.getName()
                 + ", password=" + employee.getPassword() + ", phoneNum=" + employee.getPhoneNum()
-                + ", email=" + employee.getEmail() +  "salary=" + employee.getSalary() + '}';
+                + ", email=" + employee.getEmail() +  ", salary=" + employee.getSalary()+"}";
     }
     
 
