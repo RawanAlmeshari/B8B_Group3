@@ -186,7 +186,7 @@ public class AppointmentTest {
      */
     @Test
     public void testGetDateFormat() {
-       // System.out.println("getDateFormat");
+
         Date date = new Date();
         date.setDate(12);
         date.setMonth(12-1);
@@ -195,7 +195,7 @@ public class AppointmentTest {
         String expResult = "12-12-2020";
         String result = instance.getDateFormat(date);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
     }
 
     /**

@@ -269,7 +269,6 @@ public class MainTest {
         @Ignore
     public void testDashes() {
         //System.out.println("dashes");
-        
         String dash= "--------------------------------------------------------";
         //assertEquals(Main.dashes(),dash);
         // TODO review the generated test code and remove the default call to fail.
@@ -294,15 +293,14 @@ public class MainTest {
      */
     @Test
     public void testSearchWorkerPhoneNum() {
-        //System.out.println("searchWorkerPhoneNum");
         Worker worker = new Worker ("gadah","ghadah", 1234, "0593480888", "ghadahsultan75@gmail.com",200000);
+        
        ArrayList <Worker> work = new ArrayList <>();
        work.add(worker);
+       
         int expResult = 0;
         int result = Main.searchWorkerPhoneNum("0593480888",work);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
 }

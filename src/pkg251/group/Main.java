@@ -143,8 +143,8 @@ public class Main {
         if (check != -1) {
             String appAssign = appointmentsAssign(number);
             System.out.println("\n\n" + appAssign);
-            if (!appAssign.equalsIgnoreCase("sorry there is no appointemnst assign to this number")) {
-                System.out.print("What is teh ID of appointment you want to canceal? ");
+            if (!appAssign.equalsIgnoreCase("sorry there is no appointemnst assigned to this number")) {
+                System.out.print("What is the ID of appointment you want to cancel? ");
                 String id = input2.next();
                 int index = searchID(id);
                 if (index == -1) {
@@ -178,10 +178,10 @@ public class Main {
     public static void servicesMenu() {
         
         System.out.print("1.hairCut \n"
-                + "2.Pedicure  \n"
-                + "3.manicure\n "
-                + "4.makeUp  \n"
-                + "5.Wax \n"
+                + "2.Pedicure\n"
+                + "3.manicure\n"
+                + "4.makeUp\n"
+                + "5.Wax\n"
                 + "6.hairDry \n"
                 + "Your Choice: ");
         

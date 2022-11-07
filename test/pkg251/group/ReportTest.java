@@ -55,8 +55,7 @@ public class ReportTest {
         double expResult = 250;
         double result = instance.calculateIncome(appointment);
         assertEquals(expResult, result,0.5);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -67,7 +66,6 @@ public class ReportTest {
         Service service = new Service("wax",125,null);
         Appointment s = new Appointment("15",service ,null,"12-12-2022");
         
-       // System.out.println("calculateServices");
         ArrayList<Appointment> appointment = new ArrayList<>();
         appointment.add(s);
         appointment.add(s);
@@ -75,8 +73,8 @@ public class ReportTest {
         int expResult = 2;
         int result = instance.calculateServices(appointment, "wax");
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        
+        
     }
 
     /**

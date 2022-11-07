@@ -6,10 +6,6 @@ package pkg251.group;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author earth
- */
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
